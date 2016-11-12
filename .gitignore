@@ -19,7 +19,5 @@ framework/
 index.php
 install-frameworkmissing.html
 install.php
-reports/
-siteconfig/
 themes/simple
 web.config
