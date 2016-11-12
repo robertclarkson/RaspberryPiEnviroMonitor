@@ -39,7 +39,7 @@ class Page_Controller extends ContentController {
 
 	public function TakeReading() {
 
-		$reading = exec ('/home/pi/TakeReading.py');
+        $reading = exec ('/home/pi/TakeReading.py', &$output, &$return_var);
 		$readingArr = json_decode($reading);
 
 		$sample = Reading::create();
@@ -50,6 +50,9 @@ class Page_Controller extends ContentController {
 		$sample->moist = $readingArr['moist'];
 		$sample->lux = $readingArr['lux'];
 		$sample->write();
+
+		echo 'Reading: '.$reading;
+        echo ' Output: '.$output;
 	}
 
 }
