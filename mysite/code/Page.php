@@ -39,7 +39,7 @@ class Page_Controller extends ContentController {
 
 	public function TakeReading() {
 
-        $reading = exec ('sudo /home/pi/TakeReading.py 2>&1', $output, $return_var);
+        $reading = exec ('sudo /var/www/html/enviro/TakeReading.py 2>&1', $output, $return_var);
 		$readingArr = json_decode($reading, true);
 
 		$sample = Reading::create();
