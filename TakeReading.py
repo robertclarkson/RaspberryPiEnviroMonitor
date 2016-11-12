@@ -17,7 +17,7 @@ moist = analog.read(0)
 soiltemp = analog.read(1)
 reading = {"lux": lux, "rgb":rgb, "acc":acc, "heading":heading, "temp":temp, "press":press, "moist":moist, "soiltemp":soiltemp}
 #print("%f|%s|%s|%f|%f|%f|%f|%f" % (lux, rgb, acc, heading, temp, press, moist, soiltemp))
-print reading
+print json.dumps(reading)
 
 
 
