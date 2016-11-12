@@ -1,10 +1,14 @@
 <?php
 
-class TakeReading extends Controller {
+class TakeReading extends CliController {
 
     private static $allowed_actions = array(
         'index'
     );
+
+    function process( ) {
+        $this->index();
+    }
 
     function index() {
         $reading = exec ('/home/pi/TakeReading.py', &$output, &$return_var);
