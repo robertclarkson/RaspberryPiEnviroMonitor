@@ -52,7 +52,8 @@ class Page_Controller extends ContentController {
 		$sample->write();
 
 		echo 'Reading: '.$reading;
-        echo ' Output: '.$output;
+        echo ' Output: '.print_r($output,true);
+        echo ' return_var: '.print_r($return_var,true);
 	}
 
 }
