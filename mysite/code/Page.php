@@ -51,6 +51,8 @@ class Page_Controller extends ContentController {
 		$sample->lux = $readingArr['lux'];
 		$sample->write();
 
+		print_r($sample);
+
 		echo 'Reading: '.$reading;
         echo ' Output: '.print_r($output,true);
         echo ' return_var: '.print_r($return_var,true);
