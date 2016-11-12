@@ -7,7 +7,7 @@ class TakeReading extends Controller {
     );
 
     function index() {
-        $reading = exec ('/home/pi/TakeReading.py');
+        $reading = exec ('/home/pi/TakeReading.py', &$output, &$return_var);
         $readingArr = json_decode($reading);
 
         $sample = Reading::create();
@@ -18,6 +18,8 @@ class TakeReading extends Controller {
         $sample->moist = $readingArr['moist'];
         $sample->lux = $readingArr['lux'];
         $sample->write();
-        echo $reading;
+        echo 'Reading: '.$reading;
+        echo ' Output: '.$output;
+
     }
 }
