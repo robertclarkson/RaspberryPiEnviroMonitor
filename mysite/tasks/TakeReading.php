@@ -11,7 +11,7 @@ class TakeReading extends CliController {
     }
 
     function index() {
-        $reading = exec ('/home/pi/TakeReading.py', &$output, &$return_var);
+        $reading = exec ('/home/pi/TakeReading.py', $output, $return_var);
         $readingArr = json_decode($reading);
 
         $sample = Reading::create();
