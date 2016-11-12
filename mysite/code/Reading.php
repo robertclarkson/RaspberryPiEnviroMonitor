@@ -15,7 +15,7 @@ class Reading extends DataObject {
 	// }
 
 	private static $db = array(
-		'press' => 'Decimal(20,11)'
+		'press' => 'Decimal(20,11)',
 		'rgb' => 'Varchar(11)',
 		'soiltemp' => 'Decimal(4,3)',
 		'temp' => 'Decimal(4,2)',
