@@ -52,13 +52,13 @@
 						count: -1,
 						units: {
 						  days: {format: ['dd MMM']},
-						  hours: {format: ['HH:mm', 'ha']},
+						  hours: {format: ['H:mm', 'ha']},
 						}
 					},
 					minorGridlines: {
 						units: {
-						  hours: {format: ['hh:mm:ss a', 'ha']},
-						  minutes: {format: ['HH:mm a Z', ':mm']}
+						  hours: {format: ['H:mm', 'ha']},
+						  minutes: {format: ['H:mm', ':mm']}
 						}
 					}
 				},
