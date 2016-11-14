@@ -41,7 +41,6 @@
 		}
 
 		function drawGraph(divID, valuesArray, graphTitle, fieldTitle) {
-			console.log(valuesArray);
 			var data = new google.visualization.DataTable();
 			data.addColumn('date', 'Date');
 			data.addColumn('number', graphTitle);
