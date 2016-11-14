@@ -23,4 +23,14 @@ class Reading extends DataObject {
 		'lux' => 'Int'
 	);
 
+	private static $summary_fields = array(
+		'press',
+		'rgb',
+		'soiltemp',
+		'temp',
+		'moist',
+		'lux'
+	);
+	public static $default_sort = 'Created DESC';
+
 }

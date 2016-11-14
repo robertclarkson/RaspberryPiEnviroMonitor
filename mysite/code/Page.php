@@ -34,7 +34,7 @@ class Page_Controller extends ContentController {
 		// You can include any CSS or JS required by your project here.
 		// See: http://doc.silverstripe.org/framework/en/reference/requirements
 		// 
-		Requirements::Javascript('https://www.gstatic.com/charts/loader.js');
+		// Requirements::Javascript('https://www.gstatic.com/charts/loader.js');
 	}
 
 	public function TakeReading() {
@@ -56,6 +56,10 @@ class Page_Controller extends ContentController {
 		echo 'Reading: '.$reading;
         echo ' Output: '.print_r($output,true);
         echo ' return_var: '.print_r($return_var,true);
+	}
+
+	public function Readings() {
+		return Reading::get();
 	}
 
 }
