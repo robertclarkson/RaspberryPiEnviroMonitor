@@ -64,7 +64,7 @@
 					}
 				},
 				vAxis: {
-				  title: fieldtitle
+				  title: fieldTitle
 				}
 			};
 			var chart = new google.visualization.LineChart(document.getElementById(divID));
