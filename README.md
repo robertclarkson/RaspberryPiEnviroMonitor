@@ -67,6 +67,11 @@ exit;
 ```
 sudo nano /etc/apache2/apache2.conf
 ```
+
+### Enable rewrite
+```
+sudo a2enmod rewrite
+```
 ### Change this 
 ```
 <Directory /var/www/>
@@ -83,11 +88,37 @@ sudo nano /etc/apache2/apache2.conf
         Require all granted
 </Directory>
 ```
+### change php execution time to 2 mins
+```
+sudo nano /etc/php5/apache2/php.ini
+
+# change 
+max_execution_time = 30
+# to 
+max_execution_time = 120
+
+```
 
 ### Restart Apache
 ```
 sudo service apache2 restart
 ```
 
+### Update Permissions
+```
+sudo chown pi:www-data . -R
+sudo chmod 775 . -R
+```
+### 
 
+### create config file and set root password
+```
+cp _ss_environment.sample _ss_environment.php
+nano _ss_environment.php
+#update SS_DATABASE_PASSWORD with your root password
+```
 
+Go to your raspberry pi homepage in your browser
+http://raspberrypi
+
+Hopefully the database should build
