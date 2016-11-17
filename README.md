@@ -63,7 +63,31 @@ mysql -u root -p
 create database enviro;
 exit;
 ```
-
-
-
+### allow override in your webroot
 ```
+sudo nano /etc/apache2/apache2.conf
+```
+### Change this 
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+
+# to this
+
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+```
+
+### Restart Apache
+```
+sudo service apache2 restart
+```
+
+
+
