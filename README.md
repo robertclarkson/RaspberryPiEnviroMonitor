@@ -118,6 +118,14 @@ nano _ss_environment.php
 #update SS_DATABASE_PASSWORD with your root password
 ```
 
+### allow www-data to run the enviro update
+```
+sudo visudo
+
+# then add this line
+www-data ALL=NOPASSWD: /var/www/html/TakeReading.py
+```
+
 Go to your raspberry pi homepage in your browser
 http://raspberrypi
 
