@@ -121,4 +121,4 @@ nano _ss_environment.php
 Go to your raspberry pi homepage in your browser
 http://raspberrypi
 
-Hopefully the database should build
+Hopefully the database should build and you should see the homepage
