@@ -126,6 +126,12 @@ sudo visudo
 www-data ALL=NOPASSWD: /var/www/html/TakeReading.py
 ```
 
+### Add the cron job
+```
+crontab -e 
+*/15 * * * * /var/www/html/framework/sake home/TakeReading
+```
+
 Go to your raspberry pi homepage in your browser
 http://raspberrypi
 
