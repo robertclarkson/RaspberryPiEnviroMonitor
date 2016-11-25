@@ -26,7 +26,8 @@ class Page_Controller extends ContentController {
 	 * @var array
 	 */
 	private static $allowed_actions = array (
-		'TakeReading'
+		'TakeReading',
+		'Form'
 	);
 
 	public function init() {
@@ -59,7 +60,37 @@ class Page_Controller extends ContentController {
 	}
 
 	public function Readings() {
-		return Reading::get()->filter('Created:GreaterThan', strtotime('-48 hours'));
+		if($hours = $this->Request->getVar('HoursShown')) {
+			return Reading::get()->filter('Created:GreaterThan', strtotime('-'.$hours.' hours'));
+		}
+		return Reading::get()->filter('Created:GreaterThan', strtotime('-24 hours'));
+
+	}
+
+	public function Form() {
+
+		$vals = array(
+			12 => 12,
+			24 => 24,
+			36 => 36,
+			48 => 48,
+			72 => 72,
+			144 => 144
+		);
+
+		$fields = FieldList::create(
+			DropdownField::create('HoursShown', 'Hours Shown', $vals)
+		);
+		$actions = FieldList::create(
+			FormAction::create('show', 'Show')
+		);
+		$form = Form::create($this, 'Form', $fields, $actions);
+		$form->setFormMethod('GET');
+		return $form;
+	}
+
+	public function show() {
+		return $this;
 	}
 
 }

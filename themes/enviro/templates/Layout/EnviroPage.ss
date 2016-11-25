@@ -3,6 +3,8 @@
 	<article>
 		<h1>$Title</h1>
 		<div class="content">$Content</div>
+		$Form
+		<div class="clear clearfix"></div>
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   		<div id="chart_temp"></div>
   		<div id="chart_moist"></div>
@@ -73,6 +75,6 @@
 
 		</script>
 	</article>
-		$Form
+		
 		$CommentsForm
 </div>
