@@ -18,7 +18,7 @@
 		luxArr = [];
 		
 		<% loop Readings.sort('Created ASC') %>
-			curdate = new Date($Created.Year,$Created.Format('m'),$Created.Format('d'),$Created.Format('H'),$Created.Format('i'));
+			curdate = new Date($Created.Year,$JSMonth,$Created.Format('d'),$Created.Format('H'),$Created.Format('i'));
 			tempArr.push([curdate, $temp]);
 			moistArr.push([curdate, $moist]);
 			pressArr.push([curdate, $press]);

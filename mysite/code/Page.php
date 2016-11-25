@@ -59,7 +59,7 @@ class Page_Controller extends ContentController {
 	}
 
 	public function Readings() {
-		return Reading::get();
+		return Reading::get()->filter('Created:GreaterThan', strtotime('-48 hours'));
 	}
 
 }

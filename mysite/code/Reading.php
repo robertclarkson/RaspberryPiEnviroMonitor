@@ -31,6 +31,10 @@ class Reading extends DataObject {
 		'moist',
 		'lux'
 	);
+
+	public function JSMonth() {
+		return DBField::create_field('Date', $this->Created)->format('m')-1;
+	}
 	public static $default_sort = 'Created DESC';
 
 }
